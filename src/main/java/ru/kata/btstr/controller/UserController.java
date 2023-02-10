@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 
-    @GetMapping(value = "login")
-    public String loginPage() {
-        return "users/login";
-    }
 
-    @GetMapping("user")
+
+    @GetMapping("")
     public String showUserInfo(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("user", user);
         return "users/userPage";
