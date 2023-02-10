@@ -44,7 +44,7 @@
                     <div class="tab-content" id="tabContent">
                         <ul class="nav nav-tabs">
                             <a class="nav-link active" data-toggle="tab">Users table</a>
-                            <a class="nav-link" data-toggle="tab" th:href="@{/add}">New User</a>
+                            <a class="nav-link" data-toggle="tab" th:href="@{admin/add}">New User</a>
                         </ul>
                         <div class="card">
                             <div class="card-header">
@@ -96,7 +96,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"></button>
                                                     </div>
-                                                    <form th:action="@{/{id}/update(id=${user.id})}"
+                                                    <form th:action="@{/admin/{id}/update(id=${user.id})}"
                                                           th:object="${user}" th:method="PUT">
                                                         <div class="modal-body col-md text-center">
                                                             <br>
@@ -159,7 +159,7 @@
                                                                 aria-label="Close"></button>
                                                     </div>
                                                     <form class="modal-body col-md text-center"
-                                                          th:action="@{/{id}/delete(id=${user.id})}"
+                                                          th:action="@{/admin/{id}/delete(id=${user.id})}"
                                                           th:method="DELETE">
                                                         <div class="modal-body col-md">
                                                             <label for="id"><b>ID</b></label>

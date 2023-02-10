@@ -14,14 +14,16 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
-    private final UserDao userDao;
-    private final PasswordEncoder passwordEncoder;
+    private UserDao userDao;
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
-    @Lazy
-    public UserServiceImpl(UserDao userDao, PasswordEncoder passwordEncoder) {
-        this.userDao = userDao;
-        this.passwordEncoder = passwordEncoder;
+    public void setUserDao(UserDao userDao){
+        this.userDao=userDao;
+    }
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder){
+        this.passwordEncoder=passwordEncoder;
     }
 
     @Override

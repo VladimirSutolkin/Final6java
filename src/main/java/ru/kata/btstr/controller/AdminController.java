@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping
+@RequestMapping("/admin")
 public class AdminController {
     private final UserService userService;
     private final RoleService roleService;
@@ -29,7 +29,7 @@ public class AdminController {
         this.roleService = roleService;
     }
 
-    @GetMapping("/admin")
+    @GetMapping()
     public String showAdminPage(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("user", user);
